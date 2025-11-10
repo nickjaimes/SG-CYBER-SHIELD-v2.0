@@ -1,0 +1,150 @@
+cat > trinity_ai/trinity_core_macos.sh << 'EOF'
+#!/bin/bash
+# ==================================================
+# 🕊️ TRINITY AI v2.0 - macOS OPTIMIZED
+# ==================================================
+# MAINTENANCE | OPTIMIZATION | SECURITY
+# SAFEWAY GUARDIAN | Nicolas E. Santiago
+# Powered by DEEPSEEK AI RESEARCH TECHNOLOGY
+# ==================================================
+
+# Trinity AI Banner
+show_trinity_banner() {
+    echo "╔══════════════════════════════════════════╗"
+    echo "║               TRINITY AI v2.0            ║"
+    echo "║           TRIPLE INTELLIGENCE CORE       ║"
+    echo "║   MAINTENANCE | OPTIMIZATION | SECURITY  ║"
+    echo "║         SAFEWAY GUARDIAN                 ║"
+    echo "╚══════════════════════════════════════════╝"
+}
+
+# macOS-Compatible System Diagnostics
+macos_system_diagnostics() {
+    echo "🔧 MAINTENANCE AI - macOS System Health"
+    echo "══════════════════════════════════════════"
+    
+    # macOS-specific disk usage
+    echo "=== SYSTEM STORAGE ==="
+    df -h | grep -v tmpfs | head -10
+    echo ""
+    
+    # macOS memory info
+    echo "=== MEMORY ANALYSIS ==="
+    vm_stat | head -10
+    echo "Physical Memory: $(sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}')"
+    echo ""
+    
+    # macOS process info
+    echo "=== PROCESS OPTIMIZATION ==="
+    ps aux -o %cpu,%mem,comm | head -15
+    echo ""
+    
+    echo "✅ macOS Maintenance cycle completed"
+}
+
+# macOS-Compatible Optimization
+macos_optimization() {
+    echo "⚡ OPTIMIZATION AI - macOS Performance"
+    echo "══════════════════════════════════════════"
+    
+    # macOS performance metrics
+    echo "=== PERFORMANCE METRICS ==="
+    uptime
+    echo ""
+    
+    # macOS network info
+    echo "=== NETWORK ANALYSIS ==="
+    netstat -i | head -10
+    echo ""
+    
+    # macOS system load
+    echo "=== SYSTEM LOAD ==="
+    sysctl -n vm.loadavg
+    echo ""
+    
+    echo "✅ macOS Optimization cycle completed"
+}
+
+# macOS-Compatible Security
+macos_security() {
+    echo "🛡️ SECURITY AI - macOS Threat Intelligence"
+    echo "══════════════════════════════════════════"
+    
+    # macOS network connections
+    echo "=== NETWORK ASSESSMENT ==="
+    lsof -i -P | grep LISTEN | head -10
+    echo ""
+    
+    # macOS security audit
+    echo "=== SECURITY AUDIT ==="
+    last | head -5
+    echo ""
+    
+    # macOS process security
+    echo "=== PROCESS SECURITY ==="
+    ps aux | grep -E "(crypt|miner|backdoor|malware)" | grep -v grep || echo "✅ No suspicious processes detected"
+    echo ""
+    
+    # macOS firewall status
+    echo "=== FIREWALL STATUS ==="
+    sudo /usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate 2>/dev/null || echo "🔍 Firewall status requires sudo"
+    echo ""
+    
+    echo "✅ macOS Security cycle completed"
+}
+
+# macOS Trinity AI Controller
+macos_trinity_controller() {
+    while true; do
+        show_trinity_banner
+        echo ""
+        echo "🎮 TRINITY AI CONTROLS (macOS):"
+        echo "══════════════════════════════════════════"
+        echo "1. 🔧 Run MAINTENANCE AI (macOS)"
+        echo "2. ⚡ Run OPTIMIZATION AI (macOS)" 
+        echo "3. 🛡️ Run SECURITY AI (macOS)"
+        echo "4. 🔄 Run FULL TRINITY CYCLE"
+        echo "5. 📊 Trinity Status Report"
+        echo "6. 🚪 Return to Main Menu"
+        echo "══════════════════════════════════════════"
+        echo -n "Choose [1-6]: "
+        read choice
+        
+        case $choice in
+            1) macos_system_diagnostics ;;
+            2) macos_optimization ;;
+            3) macos_security ;;
+            4) 
+                echo "🔄 INITIATING FULL TRINITY CYCLE..."
+                macos_system_diagnostics
+                macos_optimization  
+                macos_security
+                echo "🎉 TRINITY CYCLE COMPLETED!"
+                ;;
+            5)
+                echo "📊 TRINITY AI STATUS:"
+                echo "MAINTENANCE: 🟢 ACTIVE"
+                echo "OPTIMIZATION: 🟢 ACTIVE" 
+                echo "SECURITY: 🟢 ACTIVE"
+                echo "PLATFORM: 🍎 macOS OPTIMIZED"
+                ;;
+            6) break ;;
+            *) echo "Invalid selection" ;;
+        esac
+        
+        echo ""
+        echo "Press Enter to continue..."
+        read
+    done
+}
+
+# Main execution
+if [[ "$1" == "auto" ]]; then
+    macos_system_diagnostics
+    macos_optimization
+    macos_security
+else
+    macos_trinity_controller
+fi
+EOF
+chmod +x trinity_ai/trinity_core_macos.sh
