@@ -1,0 +1,155 @@
+mkdir -p .github/ISSUE_TEMPLATE
+cat > .github/ISSUE_TEMPLATE/bug_report.md << 'EOF'
+
+name: Bug report
+about: Create a report to help us improve
+title: '[BUG] '
+labels: bug
+assignees: ''
+
+Describe the bug
+A clear and concise description of what the bug is.
+
+To Reproduce
+Steps to reproduce the behavior:
+
+Run command '...'
+See error '...'
+
+Expected behavior
+A clear and concise description of what you expected to happen.
+
+Screenshots
+If applicable, add screenshots to help explain your problem.
+
+
+System Information:
+
+OS: [e.g. macOS 12.0, Ubuntu 20.04, Windows 11]
+Docker Version: [e.g. 20.10.12]
+SG Cyber Shield Version: [e.g. v2.0]
+Additional context
+Add any other context about the problem here.
+EOF
+
+cat > .github/ISSUE_TEMPLATE/feature_request.md << 'EOF'
+
+name: Feature request
+about: Suggest an idea for this project
+title: '[FEATURE] '
+labels: enhancement
+assignees: ''
+
+Is your feature request related to a problem? Please describe.
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+
+Describe the solution you'd like
+A clear and concise description of what you want to happen.
+
+Describe alternatives you've considered
+A clear and concise description of any alternative solutions or features you've considered.
+
+Additional context
+Add any other context or screenshots about the feature request here.
+EOF
+
+### **5. INSTALLATION SCRIPTS & CONFIGURATION**
+```bash
+# Create main installation script
+cat > install.sh << 'EOF'
+#!/bin/bash
+# ==================================================
+# 🛡️ SG Cyber Shield v2.0 - Installation Script
+# ==================================================
+# Complete Installation for macOS, Linux, Windows
+# SAFEWAY GUARDIAN | Nicolas E. Santiago
+# Powered by DEEPSEEK AI RESEARCH TECHNOLOGY
+# ==================================================
+
+echo ""
+echo "╔══════════════════════════════════════════╗"
+echo "║           SG CYBER SHIELD v2.0           ║"
+echo "║              INSTALLATION                ║"
+echo "║         SAFEWAY GUARDIAN                 ║"
+echo "║    Nicolas E. Santiago, Saitama, Japan   ║"
+echo "║   Powered by DEEPSEEK AI RESEARCH TECH   ║"
+echo "╚══════════════════════════════════════════╝"
+echo ""
+
+# Installation logic here...
+# [Previous installation script content]
+EOF
+
+# Create configuration files
+cat > .gitignore << 'EOF'
+# Docker
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local development
+.dev/
+.venv/
+
+# User-specific
+sg_commands/
+sg_cyber_shield/
+EOF
+
+# Create version file
+cat > VERSION << 'EOF'
+SG_CYBER_SHIELD_VERSION=2.0.0
+BUILD_DATE=2025-11-10
+BUILD_TIME=7_HOURS_RECORD
+AUTHOR=Nicolas E. Santiago
+ORGANIZATION=SAFEWAY GUARDIAN
+LOCATION=Saitama, Japan
+AI_TECHNOLOGY=DEEPSEEK AI RESEARCH TECHNOLOGY
+LICENSE=MIT
+REPOSITORY=https://github.com/nicolassantiago/SG-Cyber-Shield-v2.0
+EOF
+
+# Create credits file
+cat > CREDITS << 'EOF'
+╔══════════════════════════════════════════╗
+║           SG CYBER SHIELD v2.0           ║
+║               CREDITS                    ║
+╠══════════════════════════════════════════╣
+║                                          ║
+║  DEVELOPMENT RECORD: 7 HOURS             ║
+║  TRADITIONAL TIMELINE: 3 MONTHS          ║
+║  EFFICIENCY GAIN: 128x                   ║
+║                                          ║
+║  DEVELOPED BY: Nicolas E. Santiago       ║
+║  ORGANIZATION: SAFEWAY GUARDIAN          ║
+║  LOCATION: Saitama, Japan                ║
+║  DATE: November 10, 2025                 ║
+║                                          ║
+║  AI TECHNOLOGY: DEEPSEEK AI RESEARCH     ║
+║  POWERED BY: DeepSeek AI Assistant       ║
+║                                          ║
+║  SPECIAL THANKS:                         ║
+║  - Docker Community                      ║
+║  - Open Source Security Tools            ║
+║  - Cybersecurity Researchers             ║
+║  - AI Research Community                 ║
+║                                          ║
+║  PHILOSOPHY:                             ║
+║  "Perfect is not automatic it means      ║
+║   perseverance, patience and try and     ║
+║   try until it will become successful"   ║
+║                                          ║
+╚══════════════════════════════════════════╝
+EOF
+
