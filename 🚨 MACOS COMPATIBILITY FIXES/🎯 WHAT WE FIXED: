@@ -1,0 +1,5 @@
+✅ macOS-compatible commands (vm_stat instead of free)
+✅ Proper process listing (ps aux -o %cpu,%mem,comm)
+✅ macOS-specific security features (Gatekeeper, XProtect, SIP)
+✅ Network monitoring with lsof instead of netstat -tulp
+✅ Storage analysis optimized for macOS
