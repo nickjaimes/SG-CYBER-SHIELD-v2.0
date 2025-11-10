@@ -1,0 +1,6 @@
+RESTful endpoints for external integration:
+
+/api/v1/status - System status
+/api/v1/scan - Initiate security scan
+/api/v1/threats - Current threat intelligence
+/api/v1/settings - Configuration management
