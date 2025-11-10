@@ -1,4 +1,3 @@
-cat > docs/technical-architecture.md << 'EOF'
 # 🏗️ Technical Architecture
 
 ## System Overview
