@@ -1,0 +1,8 @@
+cat > docs/technical-architecture.md << 'EOF'
+# 🏗️ Technical Architecture
+
+## System Overview
+
+SG Cyber Shield v2.0 employs a modular, containerized architecture that integrates three advanced AI systems into a cohesive cybersecurity platform.
+
+## Architecture Diagram
