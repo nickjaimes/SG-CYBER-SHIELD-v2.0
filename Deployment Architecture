@@ -1,0 +1,10 @@
+Single-Node Deployment
+
+Ideal for personal and small business use:
+User Device → Docker Container → SG Cyber Shield
+
+Multi-Node Deployment
+
+Enterprise-scale deployment:
+
+Load Balancer → Multiple Containers → Shared Threat Intelligence
