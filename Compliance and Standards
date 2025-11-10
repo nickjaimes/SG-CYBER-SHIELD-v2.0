@@ -1,0 +1,191 @@
+Security Standards
+
+OWASP Application Security Verification Standard
+NIST Cybersecurity Framework
+ISO 27001 Information Security Management
+GDPR Data Protection Compliance
+
+Best Practices
+
+Principle of least privilege
+Defense in depth
+Secure default configurations
+Regular security updates
+
+*This technical architecture represents the foundation upon which SG Cyber Shield v2.0 is built, providing enterprise-grade security through innovative AI integration and containerized deployment.*
+EOF
+
+### **4. GITHUB CONFIGURATION FILES**
+```bash
+# Create GitHub workflows
+mkdir -p .github/workflows
+cat > .github/workflows/ci-cd.yml << 'EOF'
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Test installation script
+      run: |
+        chmod +x install.sh
+        # Basic syntax check
+        bash -n install.sh
+        
+    - name: Test macOS script
+      run: |
+        chmod +x sg_cyber_shield_v2_macos.sh
+        bash -n sg_cyber_shield_v2_macos.sh
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Security scan
+      uses: github/codeql-action/init@v2
+      with:
+        languages: shell
+        
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+EOF
+
+# Create contribution guidelines
+cat > .github/CONTRIBUTING.md << 'EOF'
+# Contributing to SG Cyber Shield
+
+We're thrilled you're interested in contributing to SG Cyber Shield! This project demonstrates the power of open collaboration and AI-human partnership.
+
+## Development Philosophy
+
+### Our Principles
+1. **AI-Human Collaboration**: We embrace AI assistance in development
+2. **Open Innovation**: All improvements benefit the community
+3. **Security First**: Every contribution must enhance security
+4. **Cross-Platform**: Maintain compatibility across macOS, Linux, Windows
+
+## How to Contribute
+
+### Reporting Issues
+- Use GitHub Issues with provided templates
+- Include system information and steps to reproduce
+- Label issues appropriately (bug, enhancement, security)
+
+### Suggesting Features
+- Check existing issues first
+- Provide detailed use cases and benefits
+- Consider cross-platform implications
+
+### Code Contributions
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Documentation
+- Improve existing documentation
+- Add tutorials and use cases
+- Translate to other languages
+
+## Development Setup
+
+### Prerequisites
+- Docker Desktop
+- Git
+- Basic shell scripting knowledge
+
+### Local Development
+```bash
+git clone https://github.com/nicolassantiago/SG-Cyber-Shield-v2.0.git
+cd SG-Cyber-Shield-v2.0
+
+# Test your changes
+./sg_cyber_shield_v2_macos.sh
+
+
+Code Standards
+
+Shell Scripting
+
+Use shellcheck for linting
+Follow Google Shell Style Guide
+Include proper error handling
+Add comments for complex logic
+
+
+Documentation
+
+Update README.md for significant changes
+Include examples for new features
+Document configuration options
+
+Testing
+
+Test on multiple platforms when possible
+Verify backward compatibility
+Include security testing
+
+AI-Assisted Development
+
+We encourage using AI tools like DeepSeek AI for:
+
+Code generation and optimization
+Documentation assistance
+Bug identification and fixes
+Architecture planning
+However, always review and understand AI-generated code before submission.
+
+
+Security Contributions
+
+Vulnerability Reporting
+
+For security vulnerabilities, please:
+
+DO NOT create a public issue
+Email security@yourdomain.com
+Include detailed reproduction steps
+Allow reasonable time for response
+
+Security Enhancements
+
+Follow secure coding practices
+Include security testing
+Document security implications
+Consider privacy impacts
+
+Recognition
+
+All contributors will be:
+
+Listed in CONTRIBUTORS.md
+Recognized in release notes
+Credited for significant contributions
+
+Getting Help
+
+Check existing documentation
+Search closed issues
+Create a discussion thread
+Contact maintainers for urgent matters
+
+License
+
+By contributing, you agree that your contributions will be licensed under the same MIT License that covers the project.
+
+
