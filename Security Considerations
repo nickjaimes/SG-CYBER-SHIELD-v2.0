@@ -1,0 +1,18 @@
+Threat Model
+
+SG Cyber Shield is designed to protect against:
+
+Network-based attacks
+System-level vulnerabilities
+Application security threats
+Social engineering attacks
+
+Defense in Depth
+
+Multiple security layers provide comprehensive protection:
+
+Container isolation
+System hardening
+Network security
+Application security
+AI-powered threat detection
