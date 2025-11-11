@@ -1,0 +1,3 @@
+# Create v2.0 directory structure
+mkdir -p ~/SG-Cyber-Shield-v2.0/{trinity_ai,eagle_eye,elemental_framework}
+cd ~/SG-Cyber-Shield-v2.0
